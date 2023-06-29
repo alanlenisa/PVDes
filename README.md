@@ -46,5 +46,5 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 # hack
-git remote set-url origin https://<githubtoken>@github.com/<username>/<repositoryname>.git
+git remote set-url origin https://\<githubtoken>@github.com/<username>/<repositoryname>.git
 
