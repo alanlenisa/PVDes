@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/PVDes/static/css/main.7a644efb.css",
+    "main.js": "/PVDes/static/js/main.389c3ea7.js",
+    "static/js/787.2e78f86d.chunk.js": "/PVDes/static/js/787.2e78f86d.chunk.js",
+    "index.html": "/PVDes/index.html",
+    "main.7a644efb.css.map": "/PVDes/static/css/main.7a644efb.css.map",
+    "main.389c3ea7.js.map": "/PVDes/static/js/main.389c3ea7.js.map",
+    "787.2e78f86d.chunk.js.map": "/PVDes/static/js/787.2e78f86d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7a644efb.css",
+    "static/js/main.389c3ea7.js"
+  ]
+}
