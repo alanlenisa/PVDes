@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import ImageMapper from 'react-img-mapper';
+//import ImageMapper from 'react-img-mapper';
+import ImageMapper from '../react-img-mapper/ImageMapper';
 import useStaticMap from '../hooks/useStaticMap';
 import mapImg from '../map.png';
 
 
 const Mapper = () => {
-   // const URL = 'https://raw.githubusercontent.com/img-mapper/react-docs/master/src/assets/example.jpg';
+    const URL = 'https://raw.githubusercontent.com/img-mapper/react-docs/master/src/assets/example.jpg';
   
     //const MAP = {
     //    name: 'my-map',
@@ -14,7 +15,7 @@ const Mapper = () => {
  
     //};
     const map= useStaticMap();
-
+  //  alert(map.areas.length);
     const [msg, setMsg] = useState("");
 
     function clicked(area) {
@@ -41,20 +42,21 @@ const Mapper = () => {
                 } at coords ${JSON.stringify(coords)} !`
         );
     }
-
+ //              responsive={true}
+ //           parentWidth={500}
     return <>
         <div className="row">
             <div className="col-1"></div>
-            <div className="col-6" style={{ backgroundColor:"rgb(250,10,4)" }}>
+            <div className="col-6" style={{ backgroundColor:"rgba(250,10,4,0.1)" }}>
         <ImageMapper
             src={mapImg}
+            src1={URL}
             map={map}
             onClick={(area) => clicked(area)}
             onMouseEnter={(area) => enterArea(area)}
             onMouseLeave={(area) => leaveArea(area)}
             onMouseMove={(area, _, evt) => moveOnArea(area, evt)}
-            responsive={true}
-            parentWidth={'100%'}
+       
             />
             </div>
             <div className="col-4" style={{ backgroundColor: "rgb(10,4,200)" }}>

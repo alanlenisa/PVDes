@@ -14,8 +14,8 @@ const staticMap = {
             shape: "poly",
             coords: [0, 0, 376, 0, 376, 340, 0, 340],
             preFillColor: "#5da0d02e",
-            lineWidth: 5,
-            lineColor: "red",
+            lineWidth: 1,
+            lineColor: "blue",
             lol: "aaa"
         },
 
@@ -23,13 +23,13 @@ const staticMap = {
             name: "3",
             shape: "poly",
             coords: [381, 241, 383, 94, 462, 53, 457, 282],
-            fillColor: "yellow"
+            fillColor: "blue"
         },
         {
             name: "4",
             shape: "poly",
             coords: [245, 285, 290, 285, 274, 239, 249, 238],
-            preFillColor: "red"
+            preFillColor: "yellow"
         },
         { name: "5", shape: "circle", coords: [170, 100, 25] }
     ]
