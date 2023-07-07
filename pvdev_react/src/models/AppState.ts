@@ -4,6 +4,6 @@ export default interface AppState{
     formData:AppData;
 
     changeFormData:(data:AppData)=>void;
-    resetFormData()=>void;
+    resetFormData:()=>void;
 
 }

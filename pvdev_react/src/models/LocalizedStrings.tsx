@@ -8,7 +8,7 @@
 
 export const LocalizedStrings:LanguageStrings = {
     "it": {         
-        "ui_welcome": "Benvenuto"
+        "ui_welcome": "Benvenuto!"
     }
  
 }
