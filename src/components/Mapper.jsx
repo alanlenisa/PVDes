@@ -43,7 +43,7 @@ const Mapper = () => {
         );
     }
  //              responsive={true}
- //           parentWidth={500}
+ //           parentWidth={500}parentWidth={'100%'}
     return <>
         <div className="row">
             <div className="col-1"></div>
@@ -56,7 +56,9 @@ const Mapper = () => {
             onMouseEnter={(area) => enterArea(area)}
             onMouseLeave={(area) => leaveArea(area)}
             onMouseMove={(area, _, evt) => moveOnArea(area, evt)}
-       
+            
+            
+
             />
             </div>
             <div className="col-4" style={{ backgroundColor: "rgb(10,4,200)" }}>
