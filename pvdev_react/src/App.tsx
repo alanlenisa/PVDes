@@ -3,6 +3,7 @@ import logo from './sun_logo.png';
 import './App.css';
 import { useCurrentLanguage } from "./hooks/useLanguage";
 import Mapper from './components/Mapper';
+import Settings from './components/Settings';
 
 function App() {
     const T = useCurrentLanguage();
@@ -17,7 +18,17 @@ function App() {
         
        
             </header>
-        <Mapper/>
+            <div className="row">
+                <div className="col-1 "></div>
+                <div className="col-6 " style={{ backgroundColor: "rgba(250,10,4,0.1)" }}>          
+                    <Mapper />
+                </div>
+                <div className="col-4" style={{ backgroundColor: "rgba(10,4,200,0.1)" }}>
+                    <Settings />
+                </div>
+                <div className="col-1"></div>
+
+            </div>
         </div>
   );
 }

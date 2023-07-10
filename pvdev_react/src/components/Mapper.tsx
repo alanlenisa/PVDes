@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 //import ImageMapper from 'react-img-mapper';
-import ImageMapper from '../react-img-mapper/ImageMapper';
+import ImageMapper, { AreaEvent, CustomArea } from '../react-img-mapper/ImageMapper';
 import useStaticMap from '../hooks/useStaticMap';
 import mapImg from '../map.png';
 
@@ -18,39 +18,36 @@ const Mapper = () => {
   //  alert(map.areas.length);
     const [msg, setMsg] = useState("");
 
-    function clicked(area) {
-        alert(area.name);
+    function clicked(area: CustomArea) {
+        alert(area.id);
         setMsg(`Clicked ${area.shape}`);
     }
 
-    function enterArea(area) {
-       setMsg(`You entered ${area.shape} ${area.name} at coords ${JSON.stringify(
+    function enterArea(area: CustomArea) {
+       setMsg(`You entered ${area.shape} ${area.id} at coords ${JSON.stringify(
                 area.coords)}
             `
         );
     }
-    function leaveArea(area) {
-      setMsg(`You leaved ${area.shape} ${area.name} at coords ${JSON.stringify(
+    function leaveArea(area: CustomArea) {
+      setMsg(`You leaved ${area.shape} ${area.id} at coords ${JSON.stringify(
                 area.coords
             )} !`
         );
     }
-    function moveOnArea(area, evt) {
+    function moveOnArea(area: CustomArea, evt: any) {
         const coords = { x: evt.nativeEvent.layerX, y: evt.nativeEvent.layerY };
-        //console.log(`coords ${ JSON.stringify(coords) }!`);
-        setMsg(`You moved on ${area.shape} ${area.name
+        //console.log(evt);
+        setMsg(`You moved on ${area.shape} ${area.id
                 } at coords ${JSON.stringify(coords)} !`
         );
     }
  //              responsive={true}
  //           parentWidth={500}parentWidth={'100%'}
     return <>
-        <div className="row">
-            <div className="col-1"></div>
-            <div className="col-6" style={{ backgroundColor:"rgba(250,10,4,0.1)" }}>
-        <ImageMapper
+         <ImageMapper
             src={mapImg}
-            src1={URL}
+           
             map={map}
             onClick={(area) => clicked(area)}
             onMouseEnter={(area) => enterArea(area)}
@@ -60,12 +57,7 @@ const Mapper = () => {
             
 
             />
-            </div>
-            <div className="col-4" style={{ backgroundColor: "rgb(10,4,200)" }}>
-            </div>
-            <div className="col-1"></div>
 
-        </div>
             <span>{msg}</span>
 
     </>
