@@ -9,14 +9,27 @@ import {
 } from "../models/validations";
 import { FormProvider, useForm } from 'react-hook-form';
 import { TextFieldValidated } from './validated/TextFieldValidated';
+import { useAppStore } from '../hooks/useAppStore';
+import AppData from '../models/AppData';
 
 
 const Settings = () => {
     const T = useCurrentLanguage();
-    const methods = useForm();
 
-    const onSubmit = methods.handleSubmit(data => {
-        
+    const formdata = useAppStore((s) => s.formData);
+    console.log(formdata);
+    const changeData = useAppStore((s) => s.changeFormData);
+
+    const methods = useForm({ defaultValues: formdata || {} });
+
+    const onSubmit = methods.handleSubmit((data:AppData) => {
+        const d: AppData = {
+            ...formdata,
+            kwh_gg: data.kwh_gg,
+
+
+        };
+        changeData(d);
     });
 
     return (
@@ -29,7 +42,7 @@ const Settings = () => {
                     <TextFieldValidated className="input-normal " style={{ textAlign: 'center' }}  {...gg_needed_validation} ></TextFieldValidated>
                 </form>
                 <div>
-                    <Button variant="contained" onClick={onSubmit} >Hello World</Button>
+                    <Button variant="contained" onClick={onSubmit} >{ T("ui_compute")}</Button>
                 </div>
             </FormProvider>
 

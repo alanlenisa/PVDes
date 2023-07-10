@@ -60,8 +60,8 @@ export const TextFieldValidated = (props: any) => {
                         id={id}
                         type={type}
                         label={T(label)}
-                        className={`${className}  ${isInvalid ? " invalid-input" : ""}`}
-                        
+                        className={`${className}`}
+                        error={ isInvalid}
                         inputProps={{ style: style }}
                     />
                 </div>

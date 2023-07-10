@@ -4,10 +4,10 @@ import './App.css';
 import { useCurrentLanguage } from "./hooks/useLanguage";
 import Mapper from './components/Mapper';
 import Settings from './components/Settings';
+import { useAppStore } from './hooks/useAppStore';
 
 function App() {
     const T = useCurrentLanguage();
-
 
 
     return (
@@ -19,7 +19,7 @@ function App() {
        
             </header>
             <div className="row">
-                <div className="col-1 "></div>
+                <div className="LOL-d-sm-none col-1 "></div>
                 <div className="col-6 " style={{ backgroundColor: "rgba(250,10,4,0.1)" }}>          
                     <Mapper />
                 </div>

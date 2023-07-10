@@ -9,6 +9,7 @@
 export const LocalizedStrings:LanguageStrings = {
     "it": {         
         "ui_welcome": "Benvenuto!",
+        "ui_compute":"Calcola",
         "kwh_gg": "kWh giornalieri",
         "gg_needed": "Giorni di autonomia",
     }

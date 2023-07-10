@@ -18,8 +18,8 @@ const Mapper = () => {
   //  alert(map.areas.length);
     const [msg, setMsg] = useState("");
 
-    function clicked(area: CustomArea) {
-        alert(area.id);
+    function clicked(area: any) {
+        alert(area.name);
         setMsg(`Clicked ${area.shape}`);
     }
 
