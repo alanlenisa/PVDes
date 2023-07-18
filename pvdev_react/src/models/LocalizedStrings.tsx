@@ -12,6 +12,7 @@ export const LocalizedStrings:LanguageStrings = {
         "ui_compute":"Calcola",
         "kwh_gg": "kWh giornalieri",
         "gg_needed": "Giorni di autonomia",
+        "w_inverter": "W inverter",
     }
  
 }

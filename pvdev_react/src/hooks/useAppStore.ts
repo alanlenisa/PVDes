@@ -22,6 +22,6 @@ const setContext = (data: AppData): AppData => {
 export const useAppStore = create<AppState>()((set) => ({
     formData: getContext(),
     changeFormData: (data) => set(() => ({ formData: { ...setContext(data) } })),
-    resetFormData:() => set(()=>({formData:{...emptyData}})),
+    resetFormData: () => set(() => ({ formData: { ...setContext(emptyData)}})),
 
 }));

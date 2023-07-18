@@ -50,3 +50,52 @@ export const gg_needed_validation = {
 
     },
 }
+
+export const w_inverter_validation = {
+    name: 'w_inverter',
+    label: 'w_inverter',
+    type: 'number',
+    id: 'w_inverter',
+    placeholder: '',
+    validation: {
+        required: {
+            value: true,
+            message: 'required',
+        },
+        min: 10,
+        max: 10000,
+
+    },
+}
+export const v_plant_validation = {
+    name: 'v_plant',
+    label: 'v_plant',
+    type: 'number',
+    id: 'v_plant',
+    placeholder: '',
+    validation: {
+        required: {
+            value: true,
+            message: 'required',
+        },
+        min: 12,
+        max: 48,
+
+    },
+}
+export const percent_battery_max_validation = {
+    name: 'percent_battery_max',
+    label: 'percent_battery_max',
+    type: 'number',
+    id: 'percent_battery_max',
+    placeholder: '',
+    validation: {
+        required: {
+            value: true,
+            message: 'required',
+        },
+        min: 5,
+        max: 95,
+
+    },
+}
