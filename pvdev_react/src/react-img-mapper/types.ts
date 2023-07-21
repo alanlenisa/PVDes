@@ -15,6 +15,7 @@ export interface MapAreas {
   strokeColor?: string;
   lineWidth?: number;
   preFillColor?: string;
+  text?: string;
 }
 
 export interface Map {

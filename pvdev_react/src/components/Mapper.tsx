@@ -4,8 +4,12 @@ import ImageMapper, { AreaEvent, CustomArea } from '../react-img-mapper/ImageMap
 import useStaticMap from '../hooks/useStaticMap';
 import mapImg from '../map.png';
 
+interface MapperProps {
+    parentW:number
+}
 
-const Mapper = () => {
+const Mapper = (props: MapperProps) => {
+
     const URL = 'https://raw.githubusercontent.com/img-mapper/react-docs/master/src/assets/example.jpg';
   
     //const MAP = {
@@ -54,8 +58,8 @@ const Mapper = () => {
             onMouseLeave={(area) => leaveArea(area)}
             onMouseMove={(area, _, evt) => moveOnArea(area, evt)}
             
-            
-
+            responsive={true}
+            parentWidth={props.parentW}
             />
 
             <span>{msg}</span>

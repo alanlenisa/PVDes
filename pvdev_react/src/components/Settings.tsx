@@ -29,6 +29,10 @@ const Settings = () => {
         const d: AppData = {
             ...formdata,
             kwh_gg: data.kwh_gg,
+            gg_needed: data.gg_needed,
+            w_inverter: data.w_inverter,
+            v_plant: data.v_plant,
+            percent_battery_max:data.percent_battery_max,
 
 
         };

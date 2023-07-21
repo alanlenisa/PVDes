@@ -251,7 +251,8 @@ const ImageMapper: React.FC<ImageMapperProps> = (props: ImageMapperProps) => {
         area.lineWidth || lineWidthProp,
         area.strokeColor || strokeColorProp,
         true,
-        ctx
+          ctx,
+          area.text
       );
       return true;
     });

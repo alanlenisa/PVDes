@@ -39,18 +39,54 @@ const drawPoly = (
   strokeColor: string,
   ctx: CTX
 ) => {
-  const newCoords = coords.reduce((a, v, i, s) => (i % 2 ? a : [...a, s.slice(i, i + 2)]), []);
-  // const first = newCoords.unshift();
-  ctx.current.fillStyle = fillColor;
-  ctx.current.beginPath();
-  ctx.current.lineWidth = lineWidth;
-  ctx.current.strokeStyle = strokeColor;
+    const newCoords = coords.reduce((a, v, i, s) => (i % 2 ? a : [...a, s.slice(i, i + 2)]), []);
+        // const first = newCoords.unshift();
+        ctx.current.fillStyle = fillColor;
+ 
 
-  // ctx.current.moveTo(first[0], first[1]);
-  newCoords.forEach(c => ctx.current.lineTo(c[0], c[1]));
-  ctx.current.closePath();
-  ctx.current.stroke();
-  ctx.current.fill();
+        ctx.current.beginPath();
+        ctx.current.lineWidth = lineWidth;
+        ctx.current.strokeStyle = strokeColor;
+
+        // ctx.current.moveTo(first[0], first[1]);
+        newCoords.forEach(c => ctx.current.lineTo(c[0], c[1]));
+        ctx.current.closePath();
+        ctx.current.stroke();
+        ctx.current.fill();
+
+};
+
+const drawPolyText = (
+    coords: number[],
+    fillColor: string,
+    lineWidth: number,
+    strokeColor: string,
+    text: string,
+    ctx: CTX,
+
+
+) => {
+    const newCoords = coords.reduce((a, v, i, s) => (i % 2 ? a : [...a, s.slice(i, i + 2)]), []);
+        // const first = newCoords.unshift();
+        ctx.current.fillStyle = fillColor;
+ 
+
+        ctx.current.beginPath();
+        ctx.current.lineWidth = lineWidth;
+        ctx.current.strokeStyle = strokeColor;
+
+        // ctx.current.moveTo(first[0], first[1]);
+        newCoords.forEach(c => ctx.current.lineTo(c[0], c[1]));
+        ctx.current.closePath();
+        ctx.current.stroke();
+        ctx.current.fill();
+
+        //
+        if (text!=null) { 
+            ctx.current.fillStyle = "black";
+            ctx.current.font = "30px Arial";
+            ctx.current.fillText(text, coords[0], coords[1]);
+        }
 };
 
 const callingFn = (
@@ -60,7 +96,8 @@ const callingFn = (
   lineWidth: number,
   strokeColor: string,
   isAreaActive: boolean,
-  ctx: CTX
+    ctx: CTX,
+  text?:string,
 ): void | boolean => {
   if (shape === 'rect' && isAreaActive) {
     return drawRect(coords, fillColor, lineWidth, strokeColor, ctx);
@@ -69,7 +106,8 @@ const callingFn = (
     return drawCircle(coords, fillColor, lineWidth, strokeColor, ctx);
   }
   if (shape === 'poly' && isAreaActive) {
-    return drawPoly(coords, fillColor, lineWidth, strokeColor, ctx);
+   // return drawPoly(coords, fillColor, lineWidth, strokeColor, ctx);
+    return drawPolyText(coords, fillColor, lineWidth, strokeColor,text, ctx);
   }
   return false;
 };

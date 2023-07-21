@@ -12,7 +12,7 @@ const staticMap = {
         }, {
             name: "1",
             shape: "poly",
-            coords: [0, 0, 376, 0, 376, 340, 0, 340],
+            coords: [10, 10, 376, 10, 376, 340, 0, 340],
             preFillColor: "#5da0d02e",
             lineWidth: 1,
             lineColor: "blue",
@@ -31,7 +31,14 @@ const staticMap = {
             coords: [245, 285, 290, 285, 274, 239, 249, 238],
             preFillColor: "yellow"
         },
-        { name: "5", shape: "circle", coords: [170, 100, 25] }
+        { name: "5", shape: "circle", coords: [170, 100, 25] },
+        {
+            name: "Inverter",
+            shape: "poly",
+            coords: [800, 600, 900, 600, 900, 700, 800, 700],
+            preFillColor: "yellow",
+            text:"YYY"
+        },
     ]
 };
 
